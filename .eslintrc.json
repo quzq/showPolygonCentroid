@@ -1,0 +1,48 @@
+{
+  "env": { "browser": true, "node": true, "es6": true, "commonjs": true },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react":{"version":"detect"}
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": [
+    "react-hooks",
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "indent":["error",2, {"SwitchCase": 1}],
+    "linebreak-style": ["error", "unix"],
+    "@typescript-eslint/no-var-requires": 0,  // requireの仕様を許容
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
+    "prettier/prettier":[
+      "error",
+      {
+        "endOfLine": "lf",  // 改行コード
+        "semi": true, // 文末にセミコンを付与
+        "trailingComma": "es5", // 最後の要素にES5準拠のコンマを付与する
+        "singleQuote": true,
+        "tabWidth": 2, // 1 インデントあたりの空白数 (2)
+        "printWidth": 200, // １行の長さ（これ以上は自動改行）
+        "useTabs": false     // インデントにタブを使用する (false)
+      }
+    ]
+  }
+}
